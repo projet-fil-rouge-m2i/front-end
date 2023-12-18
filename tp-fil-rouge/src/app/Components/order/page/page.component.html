@@ -1,4 +1,68 @@
-<div *ngFor="let order of this.data.lstOrder">
-  <app-display  [order]="order">
-  </app-display>
+<div class="container-fluid">
+  <form (ngSubmit)="onSubmit()" #orderForm="ngForm"  class="m-3 p-3 border">
+    <div class="form-group">
+      <label for="orderPresta">Type de prestation</label>
+      <input
+        type="text"
+        class="form-control"
+        id="orderPresta"
+        required
+        [(ngModel)]="newOrder.typePresta"
+        name="orderPresta"
+      />
+    </div>
+    <div class="form-group">
+      <label for="orderDescription">Designation</label>
+      <input
+        type="text"
+        class="form-control"
+        id="orderDescription"
+        [(ngModel)]="newOrder.designation"
+        name="orderDescription"
+      />
+    </div>
+    <div class="form-group">
+      <label for="orderClientId">ID Client</label>
+      <input
+        type="number"
+        class="form-control"
+        id="orderClientId"
+        required
+        [(ngModel)]="newOrder.idClient"
+        name="orderClientId"
+      />
+    </div>
+    <div class="form-group">
+      <label for="orderNbDays">Nombre de jours</label>
+      <input
+        type="number"
+        class="form-control"
+        id="orderNbDays"
+        [(ngModel)]="newOrder.nbDays"
+        name="orderNbDays"
+      />
+    </div>
+    <div class="form-group">
+      <label for="orderUnitPrice">Prix unitaire</label>
+      <input
+        type="text"
+        class="form-control"
+        id="orderUnitPrice"
+        [(ngModel)]="newOrder.unitPrice"
+        name="orderUnitPrice"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter la commande</button>
+  </form>
+  <div class="row">
+    <div class="col-md-4 col-lg-3">
+      <app-aside></app-aside>
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <div *ngFor="let order of orderService.lstOrder">
+        <app-display [order]="order"></app-display>
+      </div>
+    </div>
+  </div>
 </div>

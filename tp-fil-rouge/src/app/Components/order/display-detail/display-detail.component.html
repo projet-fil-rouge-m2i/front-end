@@ -1,0 +1,12 @@
+<div class="card" *ngIf="order">
+    <div class="card-body">
+      <h5 class="card-title">{{ this.order.typePresta }}</h5>
+      <p class="card-text">{{ this.order.designation }}</p>
+      <p class="card-text">
+        Durée : {{ this.order.nbDays }}
+        <span *ngIf="this.order.nbDays > 1">jours</span>
+        <span *ngIf="this.order.nbDays === 1">jour</span>
+      </p>
+      <p class="card-text">Prix TTC : {{ this.order.unitPrice }} €</p>
+    </div>
+  </div>

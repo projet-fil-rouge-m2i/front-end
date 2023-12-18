@@ -1,1 +1,33 @@
-<p>filter works!</p>
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    (input)="onSearch($event)"
+    placeholder="Recherche..."
+  />
+</div>
+
+<div class="form-group mt-5">
+  <label for="priceRange">Prix sélectionné : {{ selectedPrice }} €</label>
+  <input
+    type="range"
+    class="form-control-range"
+    id="priceRange"
+    [min]="getPriceMin()"
+    [max]="getPriceMax()"
+    [(ngModel)]="selectedPrice"
+    (change)="filterByPrice()"
+  />
+</div>
+
+<div class="text-center mt-5">
+  <p
+    class="clickFilterByPrice btn btn-primary mr-2"
+    (click)="filterByPriceAsc()"
+  >
+    Trié par prix croissant
+  </p>
+  <p class="clickFilterByPrice btn btn-secondary" (click)="filterByPriceDesc()">
+    Trié par prix décroissant
+  </p>
+</div>
