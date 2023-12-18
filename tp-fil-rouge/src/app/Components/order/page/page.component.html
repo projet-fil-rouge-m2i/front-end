@@ -1,4 +1,14 @@
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-lg-3">
+      <app-aside></app-aside>
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <div *ngFor="let order of orderService.lstOrder" class="mb-3"> <!-- Ajout de la classe de marge ici -->
+        <app-display [order]="order"></app-display>
+      </div>
+    </div>
+  </div>
   <form (ngSubmit)="onSubmit()" #orderForm="ngForm"  class="m-3 p-3 border">
     <div class="form-group">
       <label for="orderPresta">Type de prestation</label>
@@ -55,14 +65,7 @@
 
     <button type="submit" class="btn btn-primary">Ajouter la commande</button>
   </form>
-  <div class="row">
-    <div class="col-md-4 col-lg-3">
-      <app-aside></app-aside>
-    </div>
-    <div class="col-md-8 col-lg-9">
-      <div *ngFor="let order of orderService.lstOrder">
-        <app-display [order]="order"></app-display>
-      </div>
-    </div>
-  </div>
+  <br>
+  <br>
+  <br>
 </div>

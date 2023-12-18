@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card col-lg-6"> <!-- Ajout de la classe de grille ici -->
   <div class="card-body">
     <h5 class="card-title">{{ this.order.typePresta }}</h5>
     <p class="card-text">{{ this.order.designation }}</p>
@@ -8,9 +8,9 @@
       <span *ngIf="this.order.nbDays === 1">jour</span>
     </p>
     <p class="card-text">Prix TTC : {{ this.order.unitPrice }} €</p>
-    <button type="button" class="btn btn-danger" data-mdb-ripple-init (click)="this.deleteById(this.order.id)">
+    <button type="button" class="btn btn-danger me-2" data-mdb-ripple-init (click)="this.deleteById(this.order.id)">
       Supprimer
     </button>
-    <a [routerLink]="['/order/' + this.order.id]">Voir les détails</a>
+    <a [routerLink]="['/order/' + this.order.id]" class="btn btn-primary">Voir les détails</a>
   </div>
 </div>

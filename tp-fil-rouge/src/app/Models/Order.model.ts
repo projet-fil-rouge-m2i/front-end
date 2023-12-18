@@ -5,7 +5,7 @@ export interface Order {
     id: number;
     typePresta: string;
     designation: string;
-    client: Client;
+    clientId: Client;
     nbDays: number;
     unitPrice: number;
     totalExcludeTaxe: number; 

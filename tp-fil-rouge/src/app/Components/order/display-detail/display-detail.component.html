@@ -7,6 +7,8 @@
         <span *ngIf="this.order.nbDays > 1">jours</span>
         <span *ngIf="this.order.nbDays === 1">jour</span>
       </p>
-      <p class="card-text">Prix TTC : {{ this.order.unitPrice }} €</p>
+      <p class="card-text">Prix : {{ this.order.unitPrice }} €</p>
+      <p class="card-text">Nombre de jours : {{ this.order.nbDays }} €</p>
+      <p class="card-text">Compagnie : {{ this.order.clientId.companyName }} €</p>
     </div>
   </div>
